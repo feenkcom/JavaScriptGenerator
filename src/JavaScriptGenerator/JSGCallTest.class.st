@@ -43,7 +43,7 @@ JSGCallTest >> testWriteJavaScriptOn [
 ]
 
 { #category : #'tests-translating' }
-JSGCallTest >> testWritePython3On2 [
+JSGCallTest >> testWriteJavaScriptOn2 [
 	| call string |
 	call := JSGCall new
 				target: (JSGAttributeReference
@@ -56,7 +56,7 @@ JSGCallTest >> testWritePython3On2 [
 ]
 
 { #category : #'tests-translating' }
-JSGCallTest >> testWritePython3On3 [
+JSGCallTest >> testWriteJavaScriptOn3 [
 	| call string |
 	call := JSGCall new
 				target: 'fct' asJSGIdentifier;
@@ -67,7 +67,7 @@ JSGCallTest >> testWritePython3On3 [
 ]
 
 { #category : #'tests-translating' }
-JSGCallTest >> testWritePython3On4 [
+JSGCallTest >> testWriteJavaScriptOn4 [
 	| call string |
 	call := JSGCall new
 				target: 'function' asJSGIdentifier;
@@ -79,7 +79,7 @@ JSGCallTest >> testWritePython3On4 [
 ]
 
 { #category : #'tests-translating' }
-JSGCallTest >> testWritePython3On5 [
+JSGCallTest >> testWriteJavaScriptOn5 [
 	| call |
 	call := JSGCall new
 				target: 'fct' asJSGIdentifier;

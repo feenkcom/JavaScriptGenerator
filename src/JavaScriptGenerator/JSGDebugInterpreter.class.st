@@ -10,6 +10,6 @@ Class {
 }
 
 { #category : #python }
-JSGDebugInterpreter >> executePythonCode: aString [
+JSGDebugInterpreter >> executeJavaScriptCode: aString [
 	Transcript show: aString; cr
 ]

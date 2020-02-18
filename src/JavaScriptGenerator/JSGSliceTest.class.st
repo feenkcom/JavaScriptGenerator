@@ -30,7 +30,7 @@ JSGSliceTest >> testWriteJavaScriptOn [
 ]
 
 { #category : #'tests-translating' }
-JSGSliceTest >> testWritePython3On2 [
+JSGSliceTest >> testWriteJavaScriptOn2 [
 	| slice string |
 	slice := JSGSlice new
 					upperBound: 1;
@@ -40,7 +40,7 @@ JSGSliceTest >> testWritePython3On2 [
 ]
 
 { #category : #'tests-translating' }
-JSGSliceTest >> testWritePython3On3 [
+JSGSliceTest >> testWriteJavaScriptOn3 [
 	| slice string |
 	slice := JSGSlice new
 					lowerBound: 1;
@@ -51,7 +51,7 @@ JSGSliceTest >> testWritePython3On3 [
 ]
 
 { #category : #'tests-translating' }
-JSGSliceTest >> testWritePython3On4 [
+JSGSliceTest >> testWriteJavaScriptOn4 [
 	| slice string |
 	slice := JSGSlice new
 					lowerBound: 1;

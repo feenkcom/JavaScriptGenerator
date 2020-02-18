@@ -28,7 +28,7 @@ JSGInstructionsListTest >> testWriteJavaScriptOn [
 ]
 
 { #category : #'tests-translating' }
-JSGInstructionsListTest >> testWritePython3OnWithSpaceIndentation [
+JSGInstructionsListTest >> testWriteJavaScriptOnWithSpaceIndentation [
 	| instructions identifier moduleIdentifier string |
 	instructions := JSGInstructionsList new
 							indentationsCount: 4;
@@ -51,7 +51,7 @@ JSGInstructionsListTest >> testWritePython3OnWithSpaceIndentation [
 ]
 
 { #category : #'tests-translating' }
-JSGInstructionsListTest >> testWritePython3OnWithTabIndentation [
+JSGInstructionsListTest >> testWriteJavaScriptOnWithTabIndentation [
 	| instructions identifier moduleIdentifier string |
 	instructions := JSGInstructionsList new
 							indentationsCount: 1;

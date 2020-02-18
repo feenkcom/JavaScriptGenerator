@@ -13,5 +13,5 @@ Trait {
 { #category : #executing }
 JSGTExecutable >> execute [
 	JSGInterpreter current
-		executePythonCode: self generate
+		executeJavaScriptCode: self generate
 ]

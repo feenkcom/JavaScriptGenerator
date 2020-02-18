@@ -55,7 +55,7 @@ JSGInstructionsList >> do: aBlock [
 { #category : #executing }
 JSGInstructionsList >> execute [
 	JSGInterpreter current
-		executePythonCode: self generate
+		executeJavaScriptCode: self generate
 ]
 
 { #category : #comparing }

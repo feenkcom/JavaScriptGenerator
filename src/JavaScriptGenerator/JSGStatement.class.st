@@ -12,5 +12,5 @@ Class {
 { #category : #executing }
 JSGStatement >> execute [
 	JSGInterpreter current
-		executePythonCode: self generate
+		executeJavaScriptCode: self generate
 ]

@@ -100,7 +100,7 @@ JSGCall >> callWith: anArray with: aDictionary [
 { #category : #executing }
 JSGCall >> execute [
 	JSGInterpreter current
-		executePythonCode: self generate
+		executeJavaScriptCode: self generate
 ]
 
 { #category : #subscription }

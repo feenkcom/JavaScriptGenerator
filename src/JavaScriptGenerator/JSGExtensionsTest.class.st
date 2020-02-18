@@ -8,21 +8,21 @@ Class {
 }
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testByteArrayWritePython3On [
+JSGExtensionsTest >> testByteArrayWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | #[1 2 3 4] writeJavaScriptOn: s ].
 	self assert: string equals: 'bytearray([1,2,3,4])'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testCharacterWritePython3On [
+JSGExtensionsTest >> testCharacterWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | $a writeJavaScriptOn: s ].
 	self assert: string equals: '''a'''
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testDictionaryWritePython3On [
+JSGExtensionsTest >> testDictionaryWriteJavaScriptOn [
 	| dict string |
 	dict := { 
 	'a' -> 1.
@@ -33,28 +33,28 @@ JSGExtensionsTest >> testDictionaryWritePython3On [
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testFalseWritePython3On [
+JSGExtensionsTest >> testFalseWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | false writeJavaScriptOn: s ].
 	self assert: string equals: 'False'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testFloatWritePython3On [
+JSGExtensionsTest >> testFloatWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | 3.1415 writeJavaScriptOn: s ].
 	self assert: string equals: '3.1415'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testIntegerWritePython3On [
+JSGExtensionsTest >> testIntegerWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | 42 writeJavaScriptOn: s ].
 	self assert: string equals: '42'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testIntervalWritePython3On [
+JSGExtensionsTest >> testIntervalWriteJavaScriptOn [
 	| string expected |
 	string := String streamContents: [ :s | (1 to: 4) writeJavaScriptOn: s ].
 	self assert: string equals: 'range(1,5,1)'.
@@ -68,21 +68,21 @@ JSGExtensionsTest >> testIntervalWritePython3On [
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testNanWritePython3On [
+JSGExtensionsTest >> testNanWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | Float nan writeJavaScriptOn: s ].
 	self assert: string equals: 'float(''nan'')'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testSequenceableCollectionWritePython3On [
+JSGExtensionsTest >> testSequenceableCollectionWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | #(1 2 3 4) writeJavaScriptOn: s ].
 	self assert: string equals: '[1,2,3,4]'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testSetWritePython3On [
+JSGExtensionsTest >> testSetWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | #(1 2 3 4) asSet writeJavaScriptOn: s ].
 	self assert: string equals: '{1,2,3,4}'.
@@ -92,7 +92,7 @@ JSGExtensionsTest >> testSetWritePython3On [
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testStringWritePython3On [
+JSGExtensionsTest >> testStringWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | 'hello' writeJavaScriptOn: s ].
 	self assert: string equals: '''hello'''.
@@ -103,14 +103,14 @@ JSGExtensionsTest >> testStringWritePython3On [
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testTrueWritePython3On [
+JSGExtensionsTest >> testTrueWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | true writeJavaScriptOn: s ].
 	self assert: string equals: 'True'
 ]
 
 { #category : #'tests-translating' }
-JSGExtensionsTest >> testUndefinedObjectWritePython3On [
+JSGExtensionsTest >> testUndefinedObjectWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | nil writeJavaScriptOn: s ].
 	self assert: string equals: 'null'

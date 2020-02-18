@@ -36,11 +36,11 @@ JSGInterpreter class >> useFFIInterpreter [
 ]
 
 { #category : #python }
-JSGInterpreter >> executePythonCode: aString [
+JSGInterpreter >> executeJavaScriptCode: aString [
 	self subclassResponsibility
 ]
 
 { #category : #python }
-JSGInterpreter >> executePythonCodeAngGetValue: aString [
+JSGInterpreter >> executeJavaScriptCodeAngGetValue: aString [
 	^ self subclassResponsibility
 ]

@@ -16,22 +16,22 @@ Class {
 }
 
 { #category : #python }
-JSGFFIInterpreter >> executePythonCode: aString [
+JSGFFIInterpreter >> executeJavaScriptCode: aString [
 	| file baseFileName errFile |
 	baseFileName := UUID new asString.
 	file := FileLocator temp / (baseFileName , '.py').
 	file writeStreamDo: [ :s |
 		s << aString ].
 	errFile := FileLocator temp / (baseFileName , '.pyerr').
-	LibC system: ('{1} {2} 2> {3}' format: {self pathToPython . file pathString . errFile pathString}).
+	LibC system: ('{1} {2} 2> {3}' format: {self pathToJavaScript . file pathString . errFile pathString}).
 	file ensureDelete.
 	[ errFile contents isNotEmpty
-		ifTrue: [ JSGPythonException signal: errFile contents ]
+		ifTrue: [ JSGJavaScriptException signal: errFile contents ]
 	] ensure: [ errFile ensureDelete ]
 ]
 
 { #category : #accessing }
-JSGFFIInterpreter >> pathToPython [
+JSGFFIInterpreter >> pathToJavaScript [
 	"If the user set a path and the file exists, returns it."
 	pathToPython ifNotNil: [ 
 		pathToPython asFileReference exists
@@ -46,6 +46,6 @@ JSGFFIInterpreter >> pathToPython [
 ]
 
 { #category : #accessing }
-JSGFFIInterpreter >> pathToPython: anObject [
+JSGFFIInterpreter >> pathToJavaScript: anObject [
 	pathToPython := anObject
 ]
