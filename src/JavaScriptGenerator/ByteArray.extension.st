@@ -1,9 +1,9 @@
 Extension { #name : #ByteArray }
 
 { #category : #'*JavaScriptGenerator' }
-ByteArray >> writeJavaScriptOn: aStream [
+ByteArray >> writeLinkLanguageOn: aStream [
 	JSGCall new
 		target: 'bytearray' asJSGIdentifier;
 		positionalArguments:  { self asArray };
-		writeJavaScriptOn: aStream
+		writeLinkLanguageOn: aStream
 ]

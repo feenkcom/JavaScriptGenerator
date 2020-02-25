@@ -1,11 +1,11 @@
 Extension { #name : #Float }
 
 { #category : #'*JavaScriptGenerator' }
-Float >> writeJavaScriptOn: aStream [
+Float >> writeLinkLanguageOn: aStream [
 	self isNaN
 		ifTrue: [ 
 			('float' asJSGIdentifier callWith: { 'nan' asJSGString })
-				writeJavaScriptOn: aStream.
+				writeLinkLanguageOn: aStream.
 			^ self ].
 	
 	self printOn: aStream

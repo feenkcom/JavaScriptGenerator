@@ -51,8 +51,8 @@ JSGRequire >> moduleIdentifier: anObject [
 ]
 
 { #category : #translating }
-JSGRequire >> writeJavaScriptOn: aStream [
+JSGRequire >> writeLinkLanguageOn: aStream [
 	aStream << 'require('.
-	self moduleIdentifier writeJavaScriptOn: aStream.
+	self moduleIdentifier writeLinkLanguageOn: aStream.
 	aStream << ')'
 ]

@@ -19,6 +19,6 @@ String >> asJSGString [
 ]
 
 { #category : #'*JavaScriptGenerator' }
-String >> writeJavaScriptOn: aStream [
-	self asJSGString writeJavaScriptOn: aStream
+String >> writeLinkLanguageOn: aStream [
+	self asJSGString writeLinkLanguageOn: aStream
 ]

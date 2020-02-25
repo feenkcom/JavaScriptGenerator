@@ -1,14 +1,14 @@
 Extension { #name : #Set }
 
 { #category : #'*JavaScriptGenerator' }
-Set >> writeJavaScriptOn: aStream [
+Set >> writeLinkLanguageOn: aStream [
 	self ifEmpty: [ "If empty, can't use '{}' or Python will think it is a dict."
 		JSGCall new
 		target: 'set' asJSGIdentifier;
-		writeJavaScriptOn: aStream.
+		writeLinkLanguageOn: aStream.
 		^ self ].
 	
 	aStream << ${.
-	self do: [ :item | item writeJavaScriptOn: aStream ] separatedBy: [ aStream << $, ].
+	self do: [ :item | item writeLinkLanguageOn: aStream ] separatedBy: [ aStream << $, ].
 	aStream << $}
 ]

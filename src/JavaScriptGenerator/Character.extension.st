@@ -1,7 +1,7 @@
 Extension { #name : #Character }
 
 { #category : #'*JavaScriptGenerator' }
-Character >> writeJavaScriptOn: aStream [
+Character >> writeLinkLanguageOn: aStream [
 	aStream
 		<< $';
 		<< self;

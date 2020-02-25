@@ -10,7 +10,7 @@ Class {
 { #category : #tests }
 JSGLambdaTest >> assertCode: expr equals: targetStr [
 	| string |
-	string := String streamContents: [ :s | expr writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | expr writeLinkLanguageOn: s ].
 	self assert: string equals: targetStr
 ]
 

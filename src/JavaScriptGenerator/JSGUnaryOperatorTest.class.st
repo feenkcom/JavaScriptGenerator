@@ -30,6 +30,6 @@ JSGUnaryOperatorTest >> testEquality [
 { #category : #'tests-translating' }
 JSGUnaryOperatorTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | operator writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | operator writeLinkLanguageOn: s ].
 	self assert: string equals: '~1'
 ]

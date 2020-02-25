@@ -162,14 +162,14 @@ JSGCall >> target: anObject [
 ]
 
 { #category : #translating }
-JSGCall >> writeJavaScriptOn: aStream [
+JSGCall >> writeLinkLanguageOn: aStream [
 
 	await ifTrue: [ aStream << 'await ' ].
 	createNewInstance ifTrue: [ aStream << 'new ' ].
-	self target writeJavaScriptOn: aStream.
+	self target writeLinkLanguageOn: aStream.
 	aStream << $(.
 	self positionalArguments 
-		do: [ :arg | arg writeJavaScriptOn: aStream ]
+		do: [ :arg | arg writeLinkLanguageOn: aStream ]
 		separatedBy: [ aStream << $, ].
 	(self positionalArguments isNotEmpty and: [ 
 		self keywordArguments isNotEmpty ])
@@ -180,7 +180,7 @@ JSGCall >> writeJavaScriptOn: aStream [
 				ifFalse: [ self error: 'Keys of keyword arguments dict must be strings.' ].
 			aStream << assoc key.
 			aStream << $=.
-			assoc value writeJavaScriptOn: aStream ]
+			assoc value writeLinkLanguageOn: aStream ]
 		separatedBy: [ aStream << $, ].
 	aStream
 		<< $)

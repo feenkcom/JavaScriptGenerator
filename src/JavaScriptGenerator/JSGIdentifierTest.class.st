@@ -29,6 +29,6 @@ JSGIdentifierTest >> testEquality [
 { #category : #'tests-translating' }
 JSGIdentifierTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | identifier writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | identifier writeLinkLanguageOn: s ].
 	self assert: string equals: 'id'
 ]

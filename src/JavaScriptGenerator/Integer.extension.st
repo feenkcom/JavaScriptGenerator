@@ -1,6 +1,6 @@
 Extension { #name : #Integer }
 
 { #category : #'*JavaScriptGenerator' }
-Integer >> writeJavaScriptOn: aStream [
+Integer >> writeLinkLanguageOn: aStream [
 	self printOn: aStream
 ]

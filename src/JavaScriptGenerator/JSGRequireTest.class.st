@@ -27,6 +27,6 @@ JSGRequireTest >> testEquality [
 { #category : #'tests-translating' }
 JSGRequireTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | import writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | import writeLinkLanguageOn: s ].
 	self assert: string equals: 'require(''fs'')'
 ]

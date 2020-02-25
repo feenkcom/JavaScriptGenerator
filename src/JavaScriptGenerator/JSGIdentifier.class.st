@@ -174,6 +174,6 @@ JSGIdentifier >> name: anObject [
 ]
 
 { #category : #translating }
-JSGIdentifier >> writeJavaScriptOn: aStream [
+JSGIdentifier >> writeLinkLanguageOn: aStream [
 	aStream << self name
 ]

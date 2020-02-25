@@ -88,9 +88,9 @@ JSGSubscription >> target: anObject [
 ]
 
 { #category : #translating }
-JSGSubscription >> writeJavaScriptOn: aStream [
-	self target writeJavaScriptOn: aStream.
+JSGSubscription >> writeLinkLanguageOn: aStream [
+	self target writeLinkLanguageOn: aStream.
 	aStream << $[.
-	self insideBrackets writeJavaScriptOn: aStream.
+	self insideBrackets writeLinkLanguageOn: aStream.
 	aStream << $]
 ]

@@ -88,14 +88,14 @@ JSGAssignment >> toAssignate: anObject [
 ]
 
 { #category : #translating }
-JSGAssignment >> writeJavaScriptOn: aStream [
+JSGAssignment >> writeLinkLanguageOn: aStream [
 
 	declaration ifNotNil: 
 		[ aStream
 			<< declaration;
 			<< ' ' ].
-	self target writeJavaScriptOn: aStream.
+	self target writeLinkLanguageOn: aStream.
 	aStream
 		<< ' = '.
-	self toAssignate writeJavaScriptOn: aStream
+	self toAssignate writeLinkLanguageOn: aStream
 ]

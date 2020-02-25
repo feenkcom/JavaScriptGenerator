@@ -21,7 +21,7 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #JSGExpression,
+	#name : #LLGExpression,
 	#superclass : #JSGGenerable,
 	#instVars : [
 		'expression'
@@ -30,17 +30,17 @@ Class {
 }
 
 { #category : #accessing }
-JSGExpression >> expression [
+LLGExpression >> expression [
 	^ expression
 ]
 
 { #category : #accessing }
-JSGExpression >> expression: anObject [
+LLGExpression >> expression: anObject [
 	expression := anObject
 ]
 
 { #category : #translating }
-JSGExpression >> writeJavaScriptOn: aStream [
+LLGExpression >> writeLinkLanguageOn: aStream [
 	"Write the JavaScript code generated on aStream."
 
 	aStream

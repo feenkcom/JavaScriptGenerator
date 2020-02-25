@@ -100,8 +100,8 @@ JSGAttributeReference >> target: anObject [
 ]
 
 { #category : #translating }
-JSGAttributeReference >> writeJavaScriptOn: aStream [
-	self target writeJavaScriptOn: aStream.
+JSGAttributeReference >> writeLinkLanguageOn: aStream [
+	self target writeLinkLanguageOn: aStream.
 	aStream << $..
-	self attributeIdentifier writeJavaScriptOn: aStream.
+	self attributeIdentifier writeLinkLanguageOn: aStream.
 ]

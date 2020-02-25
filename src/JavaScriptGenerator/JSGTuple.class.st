@@ -9,11 +9,11 @@ Class {
 }
 
 { #category : #writing }
-JSGTuple >> writeJavaScriptOn: aStream [
+JSGTuple >> writeLinkLanguageOn: aStream [
 	aStream << '('.
 	self 
 		do: [ :elem | 
-			elem writeJavaScriptOn: aStream.
+			elem writeLinkLanguageOn: aStream.
 			aStream << ',' ].
 	aStream << ')'.
 ]

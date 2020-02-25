@@ -1,6 +1,6 @@
 Extension { #name : #UndefinedObject }
 
 { #category : #'*JavaScriptGenerator' }
-UndefinedObject >> writeJavaScriptOn: aStream [
+UndefinedObject >> writeLinkLanguageOn: aStream [
 	aStream << 'null'
 ]

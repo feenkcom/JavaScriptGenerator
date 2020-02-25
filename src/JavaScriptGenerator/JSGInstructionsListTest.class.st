@@ -23,7 +23,7 @@ JSGInstructionsListTest >> testWriteJavaScriptOn [
 					target: (JSGAttributeReference target: moduleIdentifier attributeIdentifier: 'pow' asJSGIdentifier);
 					positionalArguments: { identifier . 5 };
 					yourself).
-	string := String streamContents: [ :s | instructions writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | instructions writeLinkLanguageOn: s ].
 	self assert: string equals: ('import math{1}hello = 42{1}math.pow(hello,5){1}' format: { Smalltalk os lineEnding })
 ]
 
@@ -46,7 +46,7 @@ JSGInstructionsListTest >> testWriteJavaScriptOnWithSpaceIndentation [
 					target: (JSGAttributeReference target: moduleIdentifier attributeIdentifier: 'pow' asJSGIdentifier);
 					positionalArguments: { identifier . 5 };
 					yourself).
-	string := String streamContents: [ :s | instructions writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | instructions writeLinkLanguageOn: s ].
 	self assert: string equals: ('    import math{1}    hello = 42{1}    math.pow(hello,5){1}' format: { Smalltalk os lineEnding })
 ]
 
@@ -69,6 +69,6 @@ JSGInstructionsListTest >> testWriteJavaScriptOnWithTabIndentation [
 					target: (JSGAttributeReference target: moduleIdentifier attributeIdentifier: 'pow' asJSGIdentifier);
 					positionalArguments: { identifier . 5 };
 					yourself).
-	string := String streamContents: [ :s | instructions writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | instructions writeLinkLanguageOn: s ].
 	self assert: string equals: ('	import math{1}	hello = 42{1}	math.pow(hello,5){1}' format: { Smalltalk os lineEnding })
 ]

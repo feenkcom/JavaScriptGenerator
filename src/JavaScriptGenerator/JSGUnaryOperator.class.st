@@ -39,7 +39,7 @@ JSGUnaryOperator >> target: anObject [
 ]
 
 { #category : #translating }
-JSGUnaryOperator >> writeJavaScriptOn: aStream [
+JSGUnaryOperator >> writeLinkLanguageOn: aStream [
 	aStream << self operator.
-	self target writeJavaScriptOn: aStream
+	self target writeLinkLanguageOn: aStream
 ]

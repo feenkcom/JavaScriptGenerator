@@ -51,8 +51,8 @@ JSGBinaryOperator >> right: anObject [
 ]
 
 { #category : #translating }
-JSGBinaryOperator >> writeJavaScriptOn: aStream [
-	self left writeJavaScriptOn: aStream.
+JSGBinaryOperator >> writeLinkLanguageOn: aStream [
+	self left writeLinkLanguageOn: aStream.
 	aStream << self operator.
-	self right writeJavaScriptOn: aStream
+	self right writeLinkLanguageOn: aStream
 ]

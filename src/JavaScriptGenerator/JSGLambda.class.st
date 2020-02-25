@@ -162,12 +162,12 @@ JSGLambda >> isSmallerThan: aP3GGenerable [
 ]
 
 { #category : #accessing }
-JSGLambda >> writeJavaScriptOn: aStream [
+JSGLambda >> writeLinkLanguageOn: aStream [
 	aStream << '(('.
 	arguments 
-		do: [ :arg | arg writeJavaScriptOn: aStream ]
+		do: [ :arg | arg writeLinkLanguageOn: aStream ]
 		separatedBy: [ aStream << ', ' ].
 	aStream << ') => '.
-	expression writeJavaScriptOn: aStream.
+	expression writeLinkLanguageOn: aStream.
 	aStream << ')'.
 ]

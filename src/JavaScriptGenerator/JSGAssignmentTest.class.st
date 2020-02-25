@@ -30,6 +30,6 @@ JSGAssignmentTest >> testEquality [
 { #category : #'tests-translating' }
 JSGAssignmentTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | assignment writeJavaScriptOn: s ].
+	string := String streamContents: [ :s | assignment writeLinkLanguageOn: s ].
 	self assert: string equals: 'variable = 42'
 ]
