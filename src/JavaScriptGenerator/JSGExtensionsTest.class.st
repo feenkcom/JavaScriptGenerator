@@ -36,7 +36,7 @@ JSGExtensionsTest >> testDictionaryWriteJavaScriptOn [
 JSGExtensionsTest >> testFalseWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | false writeLinkLanguageOn: s ].
-	self assert: string equals: 'False'
+	self assert: string equals: 'false'
 ]
 
 { #category : #'tests-translating' }
@@ -106,7 +106,7 @@ JSGExtensionsTest >> testStringWriteJavaScriptOn [
 JSGExtensionsTest >> testTrueWriteJavaScriptOn [
 	| string |
 	string := String streamContents: [ :s | true writeLinkLanguageOn: s ].
-	self assert: string equals: 'True'
+	self assert: string equals: 'true'
 ]
 
 { #category : #'tests-translating' }
