@@ -1,7 +1,7 @@
 "
-I am a manually specified JavaScript expression.
+I am a manually specified JavaScript expression (single statement).
 
-This class should only be used for testing since it bypasses the whole idea behind being able to generate expressions.
+This class provides a simple mechanism for supplying code to the link.
 
 
 Public API and Key Messages

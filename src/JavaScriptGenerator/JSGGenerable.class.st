@@ -27,6 +27,17 @@ JSGGenerable >> gtInspectorJSCodeIn: composite [
 		display: [ self generate ]
 ]
 
+{ #category : #'as yet unclassified' }
+JSGGenerable >> gtJSCodeFor: aView [
+	<gtView>
+
+	^ aView textEditor 
+		title: 'JavaScript code';
+		priority: 10;
+		look: BrGlamorousCodeEditorLook new;
+		text: [ self generate ]
+]
+
 { #category : #testing }
 JSGGenerable >> isRequire [
 	^ false
