@@ -87,16 +87,6 @@ JSGCall >> await: anObject [
 	await := anObject
 ]
 
-{ #category : #call }
-JSGCall >> callWith: anArrayOrADictionary [
-	^ anArrayOrADictionary jsgCallArgumentsOf: self
-]
-
-{ #category : #call }
-JSGCall >> callWith: anArray with: aDictionary [
-	^ JSGCall target: self positionalArguments: anArray keywordArguments: aDictionary
-]
-
 { #category : #executing }
 JSGCall >> execute [
 	JSGInterpreter current
@@ -162,14 +152,14 @@ JSGCall >> target: anObject [
 ]
 
 { #category : #translating }
-JSGCall >> writeLinkLanguageOn: aStream [
+JSGCall >> writeJavaScriptOn: aStream [
 
 	await ifTrue: [ aStream << 'await ' ].
 	createNewInstance ifTrue: [ aStream << 'new ' ].
-	self target writeLinkLanguageOn: aStream.
+	self target writeJavaScriptOn: aStream.
 	aStream << $(.
 	self positionalArguments 
-		do: [ :arg | arg writeLinkLanguageOn: aStream ]
+		do: [ :arg | arg writeJavaScriptOn: aStream ]
 		separatedBy: [ aStream << $, ].
 	(self positionalArguments isNotEmpty and: [ 
 		self keywordArguments isNotEmpty ])
@@ -180,7 +170,7 @@ JSGCall >> writeLinkLanguageOn: aStream [
 				ifFalse: [ self error: 'Keys of keyword arguments dict must be strings.' ].
 			aStream << assoc key.
 			aStream << $=.
-			assoc value writeLinkLanguageOn: aStream ]
+			assoc value writeJavaScriptOn: aStream ]
 		separatedBy: [ aStream << $, ].
 	aStream
 		<< $)

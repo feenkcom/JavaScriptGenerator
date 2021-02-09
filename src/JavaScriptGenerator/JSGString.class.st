@@ -105,7 +105,7 @@ JSGString >> string: anObject [
 ]
 
 { #category : #translating }
-JSGString >> writeLinkLanguageOn: aStream [
+JSGString >> writeJavaScriptOn: aStream [
 	aStream << $'.
 	self string do: [ :c|
 		(self charactersToEscape includesKey: c)

@@ -38,7 +38,7 @@ JSGCallTest >> testWriteJavaScriptOn [
 				target: 'print' asJSGIdentifier;
 				positionalArguments: { 'hello' };
 				yourself.
-	string := String streamContents: [ :s | call writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | call writeJavaScriptOn: s ].
 	self assert: string equals: 'print(''hello'')'
 ]
 
@@ -51,7 +51,7 @@ JSGCallTest >> testWriteJavaScriptOn2 [
 								attributeIdentifier: 'sin' asJSGIdentifier);
 				positionalArguments: { 45 };
 				yourself.
-	string := String streamContents: [ :s | call writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | call writeJavaScriptOn: s ].
 	self assert: string equals: 'math.sin(45)'
 ]
 
@@ -62,7 +62,7 @@ JSGCallTest >> testWriteJavaScriptOn3 [
 				target: 'fct' asJSGIdentifier;
 				keywordArguments: { 'hello' -> 1. 'key2' -> 42.42 } asDictionary;
 				yourself.
-	string := String streamContents: [ :s | call writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | call writeJavaScriptOn: s ].
 	self assert: string equals: 'fct(hello=1,key2=42.42)'
 ]
 
@@ -74,7 +74,7 @@ JSGCallTest >> testWriteJavaScriptOn4 [
 				positionalArguments: { 'positional1' . 38 };
 				keywordArguments: { 'hello' -> 1. 'key2' -> 42.42 } asDictionary;
 				yourself.
-	string := String streamContents: [ :s | call writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | call writeJavaScriptOn: s ].
 	self assert: string equals: 'function(''positional1'',38,hello=1,key2=42.42)'
 ]
 
@@ -85,5 +85,5 @@ JSGCallTest >> testWriteJavaScriptOn5 [
 				target: 'fct' asJSGIdentifier;
 				keywordArguments: { 1 -> 'badkey'. 'key2' -> 42.42 } asDictionary;
 				yourself.
-	self should: [ String streamContents: [ :s | call writeLinkLanguageOn: s ] ] raise: Error.
+	self should: [ String streamContents: [ :s | call writeJavaScriptOn: s ] ] raise: Error.
 ]

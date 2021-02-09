@@ -6,11 +6,11 @@ Dictionary >> jsgCallArgumentsOf: aP3GCallable [
 ]
 
 { #category : #'*JavaScriptGenerator' }
-Dictionary >> writeLinkLanguageOn: aWriteStream [ 
+Dictionary >> writeJavaScriptOn: aWriteStream [ 
 	aWriteStream << ${.
 	self associations do: [ :assoc |
-		assoc key writeLinkLanguageOn: aWriteStream.
+		assoc key writeJavaScriptOn: aWriteStream.
 		aWriteStream << ' : '.
-		assoc value writeLinkLanguageOn: aWriteStream ] separatedBy: [ aWriteStream << ' , ' ].
+		assoc value writeJavaScriptOn: aWriteStream ] separatedBy: [ aWriteStream << ' , ' ].
 	aWriteStream << $}
 ]

@@ -30,6 +30,6 @@ JSGSubscriptionTest >> testEquality [
 { #category : #'tests-translating' }
 JSGSubscriptionTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | subscription writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | subscription writeJavaScriptOn: s ].
 	self assert: string equals: 'test[2]'
 ]

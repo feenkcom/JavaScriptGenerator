@@ -89,16 +89,6 @@ JSGLambda >> arguments: anObject [
 	arguments := anObject
 ]
 
-{ #category : #call }
-JSGLambda >> callWith: anArrayOrADictionary [
-	^ anArrayOrADictionary jsgCallArgumentsOf: self
-]
-
-{ #category : #call }
-JSGLambda >> callWith: anArray with: aDictionary [
-	^ JSGCall target: self positionalArguments: anArray keywordArguments: aDictionary
-]
-
 { #category : #accessing }
 JSGLambda >> expression [
 	^ expression
@@ -162,12 +152,12 @@ JSGLambda >> isSmallerThan: aP3GGenerable [
 ]
 
 { #category : #accessing }
-JSGLambda >> writeLinkLanguageOn: aStream [
+JSGLambda >> writeJavaScriptOn: aStream [
 	aStream << '(('.
 	arguments 
-		do: [ :arg | arg writeLinkLanguageOn: aStream ]
+		do: [ :arg | arg writeJavaScriptOn: aStream ]
 		separatedBy: [ aStream << ', ' ].
 	aStream << ') => '.
-	expression writeLinkLanguageOn: aStream.
+	expression writeJavaScriptOn: aStream.
 	aStream << ')'.
 ]
