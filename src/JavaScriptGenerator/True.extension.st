@@ -1,6 +1,6 @@
 Extension { #name : #True }
 
 { #category : #'*JavaScriptGenerator' }
-True >> writeLinkLanguageOn: aStream [
+True >> writeJavaScriptOn: aStream [
 	aStream << 'true'
 ]

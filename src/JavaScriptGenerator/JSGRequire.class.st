@@ -10,6 +10,13 @@ Class {
 	#category : #'JavaScriptGenerator-Core'
 }
 
+{ #category : #accessing }
+JSGRequire class >> moduleIdentifier: aJSGIdentifier [
+	^ self new
+		moduleIdentifier: aJSGIdentifier;
+		yourself
+]
+
 { #category : #'instance creation' }
 JSGRequire class >> moduleNamed: aString [
 	^ self new
@@ -51,8 +58,8 @@ JSGRequire >> moduleIdentifier: anObject [
 ]
 
 { #category : #translating }
-JSGRequire >> writeLinkLanguageOn: aStream [
+JSGRequire >> writeJavaScriptOn: aStream [
 	aStream << 'require('.
-	self moduleIdentifier writeLinkLanguageOn: aStream.
+	self moduleIdentifier writeJavaScriptOn: aStream.
 	aStream << ')'
 ]

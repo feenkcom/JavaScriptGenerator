@@ -16,7 +16,7 @@ Class {
 JSGGenerable >> generate [
 	"Returns the Python 3 code generated."
 	^ String streamContents: [ :stream |
-		self writeLinkLanguageOn: stream ]
+		self writeJavaScriptOn: stream ]
 ]
 
 { #category : #'gt-inspector-extension' }
@@ -49,7 +49,7 @@ JSGGenerable >> p3gBeAddedTo: aP3GInstructionsList [
 ]
 
 { #category : #translating }
-JSGGenerable >> writeLinkLanguageOn: aStream [
+JSGGenerable >> writeJavaScriptOn: aStream [
 	"Write the JavaScript code generated on aStream."
 	self subclassResponsibility 
 ]

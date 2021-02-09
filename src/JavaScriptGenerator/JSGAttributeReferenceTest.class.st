@@ -30,6 +30,6 @@ JSGAttributeReferenceTest >> testEquality [
 { #category : #'tests-translating' }
 JSGAttributeReferenceTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | attrRef writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | attrRef writeJavaScriptOn: s ].
 	self assert: string equals: 'var.attr'
 ]

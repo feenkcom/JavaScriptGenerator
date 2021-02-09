@@ -40,7 +40,7 @@ LLGExpression >> expression: anObject [
 ]
 
 { #category : #translating }
-LLGExpression >> writeLinkLanguageOn: aStream [
+LLGExpression >> writeJavaScriptOn: aStream [
 	"Write the JavaScript code generated on aStream."
 
 	aStream

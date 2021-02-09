@@ -25,7 +25,7 @@ JSGSliceTest >> testWriteJavaScriptOn [
 	slice := JSGSlice new
 					lowerBound: 1;
 					yourself.
-	string := String streamContents: [ :s | slice writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | slice writeJavaScriptOn: s ].
 	self assert: string equals: '1:'
 ]
 
@@ -35,7 +35,7 @@ JSGSliceTest >> testWriteJavaScriptOn2 [
 	slice := JSGSlice new
 					upperBound: 1;
 					yourself.
-	string := String streamContents: [ :s | slice writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | slice writeJavaScriptOn: s ].
 	self assert: string equals: ':1'
 ]
 
@@ -46,7 +46,7 @@ JSGSliceTest >> testWriteJavaScriptOn3 [
 					lowerBound: 1;
 					upperBound: 3;
 					yourself.
-	string := String streamContents: [ :s | slice writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | slice writeJavaScriptOn: s ].
 	self assert: string equals: '1:3'
 ]
 
@@ -58,6 +58,6 @@ JSGSliceTest >> testWriteJavaScriptOn4 [
 					upperBound: 3;
 					stride: 1;
 					yourself.
-	string := String streamContents: [ :s | slice writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | slice writeJavaScriptOn: s ].
 	self assert: string equals: '1:3:1'
 ]

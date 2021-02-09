@@ -79,16 +79,16 @@ JSGSlice >> upperBound: anObject [
 ]
 
 { #category : #translating }
-JSGSlice >> writeLinkLanguageOn: aStream [
+JSGSlice >> writeJavaScriptOn: aStream [
 	self lowerBound
-		ifNotNil: [ self lowerBound writeLinkLanguageOn: aStream ].
+		ifNotNil: [ self lowerBound writeJavaScriptOn: aStream ].
 	
 	aStream << $:.
 	
 	self upperBound ifNotNil: [
-		self upperBound writeLinkLanguageOn: aStream ].
+		self upperBound writeJavaScriptOn: aStream ].
 	
 	self stride ifNil: [ ^ self ].
 	aStream << $:.
-	self stride writeLinkLanguageOn: aStream.
+	self stride writeJavaScriptOn: aStream.
 ]

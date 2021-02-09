@@ -7,16 +7,11 @@ Trait {
 }
 
 { #category : #call }
-JSGCallable >> call [
-	^ self callWith: #()
+JSGCallable >> jsCall [
+	^ self jsCallWith: #()
 ]
 
 { #category : #call }
-JSGCallable >> callWith: anArrayOrADictionary [
+JSGCallable >> jsCallWith: anArrayOrADictionary [
 	^ anArrayOrADictionary jsgCallArgumentsOf: self
-]
-
-{ #category : #call }
-JSGCallable >> callWith: anArray with: aDictionary [
-	^ JSGCall target: self positionalArguments: anArray keywordArguments: aDictionary
 ]

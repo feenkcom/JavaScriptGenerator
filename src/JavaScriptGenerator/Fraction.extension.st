@@ -1,6 +1,6 @@
 Extension { #name : #Fraction }
 
 { #category : #'*JavaScriptGenerator' }
-Fraction >> writeLinkLanguageOn: aStream [
-	self asFloat writeLinkLanguageOn: aStream
+Fraction >> writeJavaScriptOn: aStream [
+	self asFloat writeJavaScriptOn: aStream
 ]

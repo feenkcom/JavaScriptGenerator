@@ -131,10 +131,11 @@ JSGInstructionsList >> select: aBlock thenCollect: anotherBlock [
 ]
 
 { #category : #translating }
-JSGInstructionsList >> writeLinkLanguageOn: aStream [
+JSGInstructionsList >> writeJavaScriptOn: aStream [
 	self do: [ :instr |
 		self indentationsCount timesRepeat: [ aStream << self indentationChar ].
-		instr writeLinkLanguageOn: aStream.
+		instr writeJavaScriptOn: aStream.
 		aStream
+			<< ';'
 			<< Smalltalk os lineEnding ]
 ]

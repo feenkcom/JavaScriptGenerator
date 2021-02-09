@@ -6,8 +6,8 @@ SequenceableCollection >> jsgCallArgumentsOf: aP3GCallable [
 ]
 
 { #category : #'*JavaScriptGenerator' }
-SequenceableCollection >> writeLinkLanguageOn: aStream [
+SequenceableCollection >> writeJavaScriptOn: aStream [
 	aStream << $[.
-	self do: [ :item | item writeLinkLanguageOn: aStream ] separatedBy: [ aStream << $, ].
+	self do: [ :item | item writeJavaScriptOn: aStream ] separatedBy: [ aStream << $, ].
 	aStream << $]
 ]

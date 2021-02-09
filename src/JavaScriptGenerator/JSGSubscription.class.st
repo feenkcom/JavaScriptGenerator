@@ -45,16 +45,6 @@ JSGSubscription >> attributeNamed: aString [
 	^ JSGAttributeReference target: self attributeIdentifier: aString asJSGIdentifier
 ]
 
-{ #category : #call }
-JSGSubscription >> callWith: anArrayOrADictionary [
-	^ anArrayOrADictionary jsgCallArgumentsOf: self
-]
-
-{ #category : #call }
-JSGSubscription >> callWith: anArray with: aDictionary [
-	^ JSGCall target: self positionalArguments: anArray keywordArguments: aDictionary
-]
-
 { #category : #subscription }
 JSGSubscription >> from: anObject to: anotherObject by: yetAnotherObject [
 	^ self at: (JSGSlice lowerBound: anObject upperBound: anotherObject stride: yetAnotherObject)
@@ -88,9 +78,9 @@ JSGSubscription >> target: anObject [
 ]
 
 { #category : #translating }
-JSGSubscription >> writeLinkLanguageOn: aStream [
-	self target writeLinkLanguageOn: aStream.
+JSGSubscription >> writeJavaScriptOn: aStream [
+	self target writeJavaScriptOn: aStream.
 	aStream << $[.
-	self insideBrackets writeLinkLanguageOn: aStream.
+	self insideBrackets writeJavaScriptOn: aStream.
 	aStream << $]
 ]

@@ -31,6 +31,6 @@ JSGBinaryOperatorTest >> testEquality [
 { #category : #'tests-translating' }
 JSGBinaryOperatorTest >> testWriteJavaScriptOn [
 	| string |
-	string := String streamContents: [ :s | operator writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | operator writeJavaScriptOn: s ].
 	self assert: string equals: '1+2'
 ]

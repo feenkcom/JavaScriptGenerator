@@ -10,25 +10,26 @@ Class {
 { #category : #tests }
 JSGLambdaTest >> assertCode: expr equals: targetStr [
 	| string |
-	string := String streamContents: [ :s | expr writeLinkLanguageOn: s ].
+	string := String streamContents: [ :s | expr writeJavaScriptOn: s ].
 	self assert: string equals: targetStr
 ]
 
 { #category : #tests }
 JSGLambdaTest >> testMultipleArguments [
 	| lambda |
+
 	lambda := JSGLambda 
 					arguments: (Array with: #a asJSGI with: #b asJSGI with: #c asJSGI)
-					expression: #a asJSGI + (#b asJSGI callWith: (Array with: #c asJSGI)).
-	self assertCode: lambda equals: '(lambda a, b, c: a+b(c))'
+					expression: #a asJSGI + (#b asJSGI jsCallWith: (Array with: #c asJSGI)).
+	self assertCode: lambda equals: '((a, b, c) => a+b(c))'
 ]
 
 { #category : #tests }
 JSGLambdaTest >> testReturn1 [
-	self assertCode: (JSGLambda expression: 1) equals: '(lambda : 1)'
+	self assertCode: (JSGLambda expression: 1) equals: '(() => 1)'
 ]
 
 { #category : #tests }
 JSGLambdaTest >> testSingleArgument [
-	self assertCode: (JSGLambda argument: #a asJSGI expression: #a asJSGI + 1) equals: '(lambda a: a+1)'
+	self assertCode: (JSGLambda argument: #a asJSGI expression: #a asJSGI + 1) equals: '((a) => a+1)'
 ]
