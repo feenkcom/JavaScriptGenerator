@@ -34,7 +34,7 @@ JSGGenerable >> gtJSCodeFor: aView [
 	^ aView textEditor 
 		title: 'JavaScript code';
 		priority: 10;
-		look: BrGlamorousCodeEditorLook;
+		aptitude: BrGlamorousCodeEditorAptitude;
 		text: [ self generate ]
 ]
 
