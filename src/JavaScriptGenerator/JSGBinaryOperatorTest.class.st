@@ -1,5 +1,6 @@
 "
 A P3BinaryOperatorTest is a test class for testing the behavior of P3BinaryOperator
+
 "
 Class {
 	#name : #JSGBinaryOperatorTest,

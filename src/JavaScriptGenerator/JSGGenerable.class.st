@@ -2,6 +2,7 @@
 I am an abstract object that is able to generate JavaScript source code.
 
 My subclasses should implment #generate.
+
 "
 Class {
 	#name : #JSGGenerable,

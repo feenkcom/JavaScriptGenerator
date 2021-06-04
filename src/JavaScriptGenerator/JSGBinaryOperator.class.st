@@ -1,5 +1,6 @@
 "
 I am a binary Python operator.
+
 "
 Class {
 	#name : #JSGBinaryOperator,

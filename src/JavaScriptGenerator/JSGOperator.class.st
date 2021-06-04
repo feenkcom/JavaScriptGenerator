@@ -1,5 +1,6 @@
 "
 I am an abstract Python operator.
+
 "
 Class {
 	#name : #JSGOperator,

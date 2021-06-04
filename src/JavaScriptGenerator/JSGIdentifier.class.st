@@ -1,5 +1,6 @@
 "
 I represent a Python 3 identifier.
+
 "
 Class {
 	#name : #JSGIdentifier,

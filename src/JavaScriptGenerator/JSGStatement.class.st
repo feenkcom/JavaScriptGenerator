@@ -1,5 +1,6 @@
 "
 I am an abstract Python statement.
+
 "
 Class {
 	#name : #JSGStatement,
