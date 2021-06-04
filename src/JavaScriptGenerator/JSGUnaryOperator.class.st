@@ -1,5 +1,6 @@
 "
 I am a unary Python operator.
+
 "
 Class {
 	#name : #JSGUnaryOperator,

@@ -1,5 +1,6 @@
 "
 I am a call to apply on a callable target.
+
 "
 Class {
 	#name : #JSGCall,

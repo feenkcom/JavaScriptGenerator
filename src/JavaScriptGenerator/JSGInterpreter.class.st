@@ -1,5 +1,6 @@
 "
 I define methods all interpreter should implement in my class side and hold the current interpreter used in my #current inst. var.
+
 "
 Class {
 	#name : #JSGInterpreter,

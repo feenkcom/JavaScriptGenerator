@@ -2,6 +2,7 @@
 I represent a JavaScript assignment statement.
 
 The assignment can optionally declare the variable as a 'let' or 'var' scoped variable.
+
 "
 Class {
 	#name : #JSGAssignment,

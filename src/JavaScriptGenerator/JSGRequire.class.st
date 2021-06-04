@@ -1,5 +1,6 @@
 "
 I represent a JavaScript ""require"" statement.
+
 "
 Class {
 	#name : #JSGRequire,
